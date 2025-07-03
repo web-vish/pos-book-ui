@@ -1,0 +1,76 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header, main {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-top: 1rem solid var(--assent-color-3);
+  border-bottom: 1px solid var(--secondary-theme-color);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2rem 0 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+header h1 {
+  padding: 0 1rem;
+  width: 400px;
+  font-weight: 400;
+}
+
+main {
+  position: relative;
+  flex-grow: 1;
+  padding: 0 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--secondary-theme-color);
+  color: gray;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex: 1;
+}
+.content-wrapper section {
+  flex: 1;
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--secondary-theme-color);
+}
+table th, table td {
+  padding: 0.5rem;
+  text-align: left;
+  padding: 1rem;
+}
+table th {
+  font-weight: 600;
+  background-color: var(--dark-theme-color);
+  color: var(--text-dark-color);
+  padding: 1.5rem 1rem;
+}
+table tr:nth-child(even) {
+  background-color: var(--secondary-theme-color);
+}
+table tr:hover {
+  background-color: var(--assent-color-2);
+  cursor: pointer;
+  text-decoration: underline;
+}/*# sourceMappingURL=App.css.map */

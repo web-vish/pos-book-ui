@@ -1,0 +1,19 @@
+.events {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex: 1;
+  @media screen and (max-width: 630px) {
+    flex-direction: column;
+    & > * {
+      flex: 0 1 auto;
+    }
+  }
+}
+.eventContent {
+  padding: 2rem 0;
+  flex: 1;
+  @media screen and (max-width: 630px) {
+    padding: 1rem;
+  }
+}

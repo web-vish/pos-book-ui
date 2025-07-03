@@ -1,0 +1,9 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.summary h2 {
+  margin: 2rem 0 1rem;
+  font-weight: 500;
+}/*# sourceMappingURL=PositionSummary.module.css.map */

@@ -1,0 +1,24 @@
+.events {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex: 1;
+}
+@media screen and (max-width: 630px) {
+  .events {
+    flex-direction: column;
+  }
+  .events > * {
+    flex: 0 1 auto;
+  }
+}
+
+.eventContent {
+  padding: 2rem 0;
+  flex: 1;
+}
+@media screen and (max-width: 630px) {
+  .eventContent {
+    padding: 1rem;
+  }
+}/*# sourceMappingURL=Events.module.css.map */

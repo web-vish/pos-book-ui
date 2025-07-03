@@ -1,0 +1,11 @@
+.securityForm {
+  display: flex;
+  width: 30rem;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--primary-theme-color);
+  border: 1px solid var(--dark-theme-color);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=SecurityForm.module.css.map */
