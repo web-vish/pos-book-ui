@@ -18,7 +18,7 @@
     "paths": {
       "@/*": ["src/*"],
     },
-    "types": ["@testing-library/jest-dom", "jest", "@types/jest", "@types/vitest"],
+    "types": ["@testing-library/jest-dom", "@types/vitest"],
   },
   "exclude": [
     "node_modules",
@@ -32,6 +32,7 @@
     "./src/**/*.test.ts",
     "./src/**/*.test.tsx",
   ],
+  "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }

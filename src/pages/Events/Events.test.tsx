@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import { describe, it, vi } from "vitest";
+import { describe, it } from "vitest";
 import Events from ".";
 import { BrowserRouter } from "react-router";
 

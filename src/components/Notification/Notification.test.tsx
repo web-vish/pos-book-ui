@@ -6,7 +6,7 @@ import { NotificationContext } from '../../context/notificationContext';
 describe('Notification Component test Suites', () => {
   it('renders notification when id is present', () => {
     const value = {
-      notifications: { id: '1', message: 'Test message', type: 'info' },
+      notifications: { id: '1', message: 'Test message', type: 'info' as 'info' | 'success' | 'error' },
       pushNotification: vi.fn()
     };
     render(

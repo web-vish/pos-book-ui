@@ -15,8 +15,9 @@ describe("API Queries", () => {
   });
 
  it("should submit events", async () => {
-    const mockData = {events:[
-        {ID: "1",
+    const mockData = {Events:[
+        {
+          ID: 1,
         Account: "Test Account",
         Security: "Test Security",
         Quantity: 100,

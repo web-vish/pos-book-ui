@@ -9,7 +9,7 @@ describe("InputForm", () => {
   });
 
   it("renders with placeholder text", () => {
-    render(<form><InputForm label="Test Label" name="testName" placeholder="Enter text" /></form>);
+    render(<form><InputForm label="Test Label" type="text" placeholder="Enter text" /></form>);
     expect(screen.getByPlaceholderText("Enter text")).toBeInTheDocument();
   });
 });

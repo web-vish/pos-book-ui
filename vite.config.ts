@@ -14,7 +14,7 @@ export default ({ mode = "development" }) => {
   test:{
     environment: "jsdom",
     globals: true,
-    setupFiles: ['./setup.ts'],
+    setupFiles: ['./setupTest.ts'],
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'json', 'html'],
