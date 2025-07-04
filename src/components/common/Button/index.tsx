@@ -8,7 +8,7 @@ export interface ButtonProps
 }
 
 const Button = ({ text, option="primary", ...props }: ButtonProps) => {
-  /* istanbul ignore next */
+  /* istanbul ignore next @preserve*/
   const classNames = [styles.button, styles[option]].join(" ");
   return (
     <button

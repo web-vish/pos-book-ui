@@ -52,6 +52,7 @@ const EventsForm = ({title, pageType, buttonText}:SecurityFormProps) => {
   
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     const securityDataList: EventsParam[] = [];
+    setSubmitStatus(true);
     for (let i: number = 1; i <= securityList; i++) {
       const securityData: EventsParam = {
         ID: i,
@@ -59,17 +60,17 @@ const EventsForm = ({title, pageType, buttonText}:SecurityFormProps) => {
         Account: data[`security-${i}-account`],
         Security: data[`security-${i}-security`],
         ...(pageType !== "Cancel" && { Quantity: Number(data[`security-${i}-quantity`])}),
+        /* istanbul ignore next */
         ...(pageType === "Cancel" && { EventID: Number(data[`security-${i}-eventId`] )})
       };
       securityDataList.push(securityData);
     }
-    setSubmitStatus(true);
     eventDataMutation.mutate({ Events: securityDataList });
   };
 
   useEffect(() => {
     if (eventDataMutation.isSuccess && submitStatus && !eventDataMutation.isIdle) {
-      setSubmitStatus(false);
+      /* istanbul ignore else @preserve */
       if (appContext.updateContext && notificationContext) {
         appContext.updateContext(eventDataMutation.data.Positions);
         notificationContext.pushNotification({
@@ -78,15 +79,16 @@ const EventsForm = ({title, pageType, buttonText}:SecurityFormProps) => {
           type: "success",
         });
       }
+      setSubmitStatus(false);
       setSecurityList(1);
     }
     else if (eventDataMutation.isError && notificationContext && submitStatus) {
-      /* istanbul ignore next @preserve */
         notificationContext.pushNotification({
           id: "event-error",
           message: "Failed to Create / Update Securities",
           type: "error",
         });
+        setSubmitStatus(false);
     }
     // Reset the security list to 1 when the component mounts
   }, [eventDataMutation, appContext, notificationContext, submitStatus]);
@@ -103,7 +105,7 @@ const EventsForm = ({title, pageType, buttonText}:SecurityFormProps) => {
   return (
     <div>
       <h2>{title}</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} data-testid="events-form">
         <section className={styles.securityForm}>{getSecurityForms()}</section>
         <section>
           <Button

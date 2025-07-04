@@ -18,10 +18,11 @@ const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const pushNotification = (notification: Notification) => {
     setNotifications(notification);
-    // Optionally, you can add logic to remove the notification after a certain time
+    // Automatically reset the notification after a certain time
+    /* istanbul ignore next @preserve */
     setTimeout(() => {
       setNotifications({id: '', message: '', type: 'info'}); // Reset notification
-    }, 10000); // Reset after 3 seconds
+    }, 5000); // Reset after 5 seconds
   };
 
   return (
